@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Tweet from "./tweet";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 class TweetScroll extends Component {
   constructor(props) {
@@ -55,6 +56,12 @@ class TweetScroll extends Component {
     const { tweets } = this.state;
     return (
       <div>
+        {/* <InfiniteScroll
+          dataLength={this.state.tweets.length}
+          next={this.fetchMoreData}
+          hasMore={true}
+          loader={<h4>Loading...</h4>}
+        ></InfiniteScroll> */}
         {tweets.map((item, index) => (
           <Tweet
             key={item.id}
