@@ -1,11 +1,9 @@
-import Form from "./components/form";
-import TweetScroll from "./components/tweetScroll";
+import ParentForm from "./components/parentform";
 
 function App() {
   return (
     <div className="App">
-      <Form />
-      <TweetScroll />
+      <ParentForm />
     </div>
   );
 }
