@@ -19,6 +19,7 @@ class Form extends Component {
   }
 
   handleSubmit(event) {
+    event.preventDefault();
     let tweet = {
       id: this.state.id,
       username: this.state.username,
@@ -26,7 +27,7 @@ class Form extends Component {
       timestamp: this.state.timestamp
     };
     this.props.handleTweet(tweet);
-    event.preventDefault();
+    // event.preventDefault();
   }
 
   render() {

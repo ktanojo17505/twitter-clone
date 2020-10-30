@@ -6,18 +6,15 @@ class TweetScroll extends Component {
   render() {
     const { tweets } = this.props;
     console.log("GOES TO TWEET SCROLL");
-    return (
-      <div>
-        {tweets.map((item, index) => (
-          <Tweet
-            key={item.id}
-            username={item.username}
-            tweet={item.tweet}
-            timestamp={item.timestamp}
-          />
-        ))}
-      </div>
-    );
+    const tweet = tweets.map(item => (
+      <Tweet
+        key={item.id}
+        username={item.username}
+        tweet={item.tweet}
+        timestamp={item.timestamp}
+      />
+    ));
+    return <div>{tweet}</div>;
   }
 }
 

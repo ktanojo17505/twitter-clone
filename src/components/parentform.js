@@ -12,17 +12,21 @@ class ParentForm extends Component {
 
   handleTweet = tweet => {
     this.setState({ tweets: [...this.state.tweets, tweet] });
+    // console.log(this.state.tweets);
   };
 
   render() {
-    const { tweets } = this.state.tweets;
+    const { tweets } = this.state;
+    console.log(tweets && tweets.length !== 0);
     const id =
       tweets && tweets.length !== 0 ? tweets[tweets.length - 1].id + 1 : 1; // set the id to either 1 or the latest id + 1
     const day = new Date();
     const timestamp = day.getTime();
+    // console.log(tweets);
+    console.log(this.state.tweets);
     if (tweets && tweets.length !== 0) {
-      console.log(tweets);
-      console.log(tweets && tweets.length !== 0);
+      // console.log(tweets);
+      // console.log(tweets && tweets.length !== 0);
       return (
         <div>
           <Form
