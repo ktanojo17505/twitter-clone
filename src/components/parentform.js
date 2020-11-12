@@ -1,4 +1,4 @@
-import Form from "./form";
+import TweetForm from "./form";
 import TweetScroll from "./tweetScroll";
 import React, { Component } from "react";
 import uuidv4 from "uuid";
@@ -27,21 +27,21 @@ class ParentForm extends Component {
     if (tweets && tweets.length !== 0) {
       return (
         <div>
-          <Form
+          <TweetForm
             id={id}
             timestamp={timestamp}
             handleTweet={this.handleTweet}
-          ></Form>
+          ></TweetForm>
           <TweetScroll tweets={tweets}></TweetScroll>
         </div>
       );
     } else {
       return (
-        <Form
+        <TweetForm
           id={id}
           timestamp={timestamp}
           handleTweet={this.handleTweet}
-        ></Form>
+        ></TweetForm>
       );
     }
   }
