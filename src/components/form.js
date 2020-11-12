@@ -18,12 +18,10 @@ class TweetForm extends Component {
 
   handleChange(event) {
     const value = event.target.value;
-    console.log("handles changes");
     this.setState({ [event.target.name]: value });
   }
 
   handleSubmit(event) {
-    console.log("handles submits");
     event.preventDefault();
     let tweet = {
       id: uuidv4(),
