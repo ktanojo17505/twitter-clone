@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class Tweet extends Component {
   state = {};
   render() {
-    const { key, username, tweet, timestamp } = this.props;
+    const { username, tweet, timestamp } = this.props;
     return (
       <div>
         <p>{username}</p>

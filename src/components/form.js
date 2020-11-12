@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import { v4 as uuidv4 } from "uuid";
 
 class Form extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.id,
       username: "",
       tweet: "Enter your tweet here!",
       timestamp: this.props.timestamp
@@ -21,13 +21,12 @@ class Form extends Component {
   handleSubmit(event) {
     event.preventDefault();
     let tweet = {
-      id: this.state.id,
+      id: uuidv4(),
       username: this.state.username,
       tweet: this.state.tweet,
       timestamp: this.state.timestamp
     };
     this.props.handleTweet(tweet);
-    // event.preventDefault();
   }
 
   render() {

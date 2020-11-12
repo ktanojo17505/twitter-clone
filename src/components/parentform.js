@@ -1,6 +1,7 @@
 import Form from "./form";
 import TweetScroll from "./tweetScroll";
 import React, { Component } from "react";
+import uuidv4 from "uuid";
 
 class ParentForm extends Component {
   constructor(props) {
@@ -12,21 +13,18 @@ class ParentForm extends Component {
 
   handleTweet = tweet => {
     this.setState({ tweets: [...this.state.tweets, tweet] });
-    // console.log(this.state.tweets);
   };
 
   render() {
-    const { tweets } = this.state;
-    console.log(tweets && tweets.length !== 0);
-    const id =
-      tweets && tweets.length !== 0 ? tweets[tweets.length - 1].id + 1 : 1; // set the id to either 1 or the latest id + 1
-    const day = new Date();
-    const timestamp = day.getTime();
-    // console.log(tweets);
+    const { tweets, id } = this.state;
+    var today = new Date();
+    const timestamp =
+      today.getHours() +
+      ":" +
+      (today.getMinutes() < 10 ? "0" : "") +
+      today.getMinutes();
     console.log(this.state.tweets);
     if (tweets && tweets.length !== 0) {
-      // console.log(tweets);
-      // console.log(tweets && tweets.length !== 0);
       return (
         <div>
           <Form
